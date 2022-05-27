@@ -1,3 +1,5 @@
+//may need to just make one js file to vote//
+
 async function downvoteClickHandler(event){
     event.preventDefault();
 

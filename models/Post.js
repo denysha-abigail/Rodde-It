@@ -1,6 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+
+// new to make a static downvote//
 // create POST model
 class Post extends Model {
     static upvote(body, models) {
