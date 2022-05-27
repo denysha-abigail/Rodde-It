@@ -101,7 +101,7 @@ router.post('/login', withAuth, (req, res) => {
     });
 });
 
-// give user ability to logout
+// logout functionality
 router.post('/logout', withAuth, (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {
@@ -113,6 +113,7 @@ router.post('/logout', withAuth, (req, res) => {
 });
 
 // PUT /api/users/?
+// update user data
 router.put('/:id', withAuth, (req, res) => {
     User.update(req.body, {
         individualHooks: true,
@@ -134,6 +135,7 @@ router.put('/:id', withAuth, (req, res) => {
 });
 
 // DELETE /api/users/?
+// delete user from database
 router.delete('/:id', withAuth, (req, res) => {
     User.destroy({
         where: {
