@@ -20,6 +20,8 @@ const sess = {
   }),
 };
 
+app.use(session(sess));
+
 const helpers = require('./utils/helpers');
 const hbs = exphbs.create({ helpers });
 
@@ -27,14 +29,13 @@ const hbs = exphbs.create({ helpers });
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-// turn on routes
-app.use(routes);
-
-app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // express.static() middleware takes all of the folder contents and serves them as static assets 
 app.use(express.static(path.join(__dirname, 'public')));
+
+// turn on routes
+app.use(routes);
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
