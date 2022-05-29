@@ -1,7 +1,8 @@
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
-const exphbs = require('express-handlebars');
+const exhbs = require('express-handlebars'); //handlebars
+const hbs = exhbs.create({}); //handlebars
 const routes = require('./controllers');
 
 const app = express();
@@ -22,8 +23,8 @@ const sess = {
 
 app.use(session(sess));
 
-const helpers = require('./utils/helpers');
-const hbs = exphbs.create({ helpers });
+//const helpers = require('./utils/helpers');
+//const hbs = exphbs.create({ helpers });   //comented by disha
 
 // sets up handlebars.js as app's template engine of choice
 app.engine('handlebars', hbs.engine);
