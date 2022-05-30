@@ -89,7 +89,7 @@ router.get('/post/:id', (req, res) => {
               });
         })
         .catch(err => {
-            console.log(err);
+            console.log(err);re
             res.status(500).json(err);
         });
 });
