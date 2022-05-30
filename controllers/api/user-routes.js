@@ -71,6 +71,10 @@ router.post('/', withAuth, (req, res) => {
             res.json(dbUserData);
         });
     })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
 });
 
 // http://localhost:3001/api/users/login 
