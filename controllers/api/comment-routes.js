@@ -8,10 +8,12 @@ router.get('/', (req, res) => {
             'id',
             'comment_text',
             'user_id',
-            'post_id'
-        ]
+            'post_id',
+            'created_at'
+        ],
+        order: [['created_at', 'DESC']]
     })
-    .then(dbPostData => res.json(dbPostData))
+    .then(dbCommentData => res.json(dbCommentData))
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
