@@ -8,8 +8,8 @@ router.get('/', (req, res) => {
     Post.findAll({
         attributes: [
             'id',
-            'post_content',
             'title',
+            'post_content',
             'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
         ],
@@ -44,10 +44,14 @@ router.get('/', (req, res) => {
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-        res.redirect('/');
+        res.redirect('/dashboard');
         return;
     }
     res.render('login');
+});
+
+router.get('/signup', (req, res) => {
+    res.render('signup');
 });
 
 router.get('/post/:id', (req, res) => {
@@ -57,8 +61,8 @@ router.get('/post/:id', (req, res) => {
         },
         attributes: [
             'id',
-            'post_content',
             'title',
+            'post_content',
             'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
         ],

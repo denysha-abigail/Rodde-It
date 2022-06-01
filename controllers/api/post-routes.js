@@ -8,8 +8,8 @@ router.get('/', (req, res) => {
   Post.findAll({
     attributes: [
       'id',
-      'post_content',
       'title',
+      'post_content',
       'created_at',
       [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
     ],
@@ -44,8 +44,8 @@ router.get('/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'post_content',
       'title',
+      'post_content',
       'created_at',
       [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
     ],
@@ -77,9 +77,8 @@ router.get('/:id', (req, res) => {
     });
 });
 
-//Creates a post
+// Creates a post
 router.post('/', withAuth, (req, res) => {
-  // expects {title: 'Taskmaster goes public!', post_content: 'https://taskmaster.com/press', user_id: 1}
   if (req.session) {
     Post.create({
       title: req.body.title,
@@ -125,11 +124,12 @@ router.put('/downvote', withAuth, (req, res) => {
     }
   });
 
-//Update a post title
+// Update a post title and content
 router.put('/:id', withAuth, (req, res) => {
   Post.update(
     {
-      title: req.body.title
+      title: req.body.title,
+      post_content: req.body.post_content
     },
     {
       where: {
@@ -152,7 +152,6 @@ router.put('/:id', withAuth, (req, res) => {
 
 //Deletes a Post
 router.delete('/:id', withAuth, (req, res) => {
-  console.log('id', req.params.id);
   Post.destroy({
     where: {
       id: req.params.id

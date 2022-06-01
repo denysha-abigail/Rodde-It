@@ -20,8 +20,8 @@ async function signupFormHandler(event) {
         document.location.replace('/dashboard');
       } else {
         alert(response.statusText);
-      }
-    }
-}
+      };
+    };
+};
 
 document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
