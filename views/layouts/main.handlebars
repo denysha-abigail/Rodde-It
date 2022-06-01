@@ -8,20 +8,26 @@
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
-<body>
-  <div class="wrapper">
-    <header>
-      <h1>
-        <a href="/">Rodde-It</a>
-      </h1>
-      <nav>
-        {{#if loggedIn}}
-          <a href="/dashboard">Dashboard</a>
-          <button id="logout" class="btn-no-style">Logout</button>
-            {{else}}
-          <a href="/login">Login</a>
-        {{/if}}
-      </nav>
+<body class="flex-column min-100-vh">
+    <header class="hero">
+        <nav class="nav">
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                {{#if loggedIn}}
+                <li>
+                    <a href="/dashboard">Dashboard</a>
+                </li>
+                <button id="logout" class="btn-no-style">Logout</button>
+                {{else}}
+                <li>
+                    <a href="/login">Login</a>
+                </li>
+                {{/if}}
+            </ul>
+        </nav>
+        <h1 class="app-title">Rodde-It</h1>
     </header>
     <main>
       {{{ body }}}

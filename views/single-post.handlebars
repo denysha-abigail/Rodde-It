@@ -1,25 +1,13 @@
- <!--in order to use partial you need >-->
 {{> post-info post}}
 
 {{#if loggedIn}}
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
 
-  <div>
-    <button type="submit">Add Comment</button>
-    <button type="button" class="upvote-btn">Upvote</button>
-    <button type="button" class="dwnVote-btn">Downvote</button>
-  </div>
-</form>
+{{> comment-form}}
+
 {{/if}}
-
-<!--finds the comments from partials folder-->
 {{> comments post.comments}}
 
 {{#if loggedIn}}
+
 <script src="/javascript/comment.js"></script>
-<script src="/javascript/upvote.js"></script>
-<script src="/javascript/downvote.js"></script>
 {{/if}}
