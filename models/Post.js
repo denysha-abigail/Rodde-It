@@ -1,36 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-
-// new to make a static downvote//
 // create POST model
 class Post extends Model {
     static upvote(body, models) {
         return models.Vote.create({
-            user_id: body.user_id,
-            post_id: body.post_id
-        }).then(() => {
-            return Post.findOne({
-                where: {
-                    id: body.post_id
-                },
-                attributes: [
-                    'id',
-                    'title',
-                    'post_content',
-                    'created_at',
-                    [
-                        sequelize.literal('(SELECT COUNT (*) FROM vote WHERE post.id = vote.post_id)'),
-                    ]
-                ]
-            });
-        });
-    }
-}
-
-class Post extends Model {
-    static downvote(body, models) {
-        return models.Vote.destroy -1({
             user_id: body.user_id,
             post_id: body.post_id
         }).then(() => {
