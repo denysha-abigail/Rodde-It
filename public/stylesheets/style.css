@@ -64,7 +64,7 @@ main {
     width: 94%;
 }
   
-.btn, .upvote-btn {
+.btn, .upvote-btn, .downvote-btn {
     font-size: 16px;
     text-decoration:none;
     padding: 10px 5px;
@@ -80,7 +80,7 @@ main {
     transform: translate(-1px, -1px);
 }
   
-.btn:hover, .upvote-btn:hover {
+.btn:hover, .upvote-btn:hover, .downvote-btn:hover {
     color: var(--primary);
     background-color: var(--tertiary);
     transform: translate(0, 0);

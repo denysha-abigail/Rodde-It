@@ -28,6 +28,30 @@ class Post extends Model {
     }
 }
 
+class Post extends Model {
+    static downvote(body, models) {
+        return models.Vote.destroy -1({
+            user_id: body.user_id,
+            post_id: body.post_id
+        }).then(() => {
+            return Post.findOne({
+                where: {
+                    id: body.post_id
+                },
+                attributes: [
+                    'id',
+                    'title',
+                    'post_content',
+                    'created_at',
+                    [
+                        sequelize.literal('(SELECT COUNT (*) FROM vote WHERE post.id = vote.post_id)'),
+                    ]
+                ]
+            });
+        });
+    }
+}
+
 // create fields/columns
 Post.init(
     {

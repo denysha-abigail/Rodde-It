@@ -111,6 +111,7 @@ router.put('/upvote', withAuth, (req, res) => {
 router.put('/downvote', withAuth, (req, res) => {
     // custom static method created in models/Post.js
     // make sure the session exists first
+    if (req.session.loggedIn){
       // pass session id along with all destructured properties on req.body
       Post.downvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
         .then(updatedVoteData => res.json(updatedVoteData))
@@ -118,6 +119,7 @@ router.put('/downvote', withAuth, (req, res) => {
           console.log(err);
           res.status(500).json(err);
         });
+      }
   });
 
 // Update a post title and content
