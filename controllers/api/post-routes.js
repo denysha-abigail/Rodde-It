@@ -79,7 +79,6 @@ router.get('/:id', (req, res) => {
 
 // Creates a post
 router.post('/', withAuth, (req, res) => {
-  if (req.session) {
     Post.create({
       title: req.body.title,
       post_content: req.body.post_content,
@@ -90,14 +89,12 @@ router.post('/', withAuth, (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
-  }
 });
 
 // PUT /api/posts/upvote
 router.put('/upvote', withAuth, (req, res) => {
   // custom static method created in models/Post.js
   // make sure the session exists first
-  if (req.session) {
     // pass session id along with all destructured properties on req.body
     Post.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
       .then(updatedVoteData => res.json(updatedVoteData))
@@ -105,7 +102,6 @@ router.put('/upvote', withAuth, (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
-  }
 });
 
 // PUT /api/posts/downvote
@@ -113,7 +109,6 @@ router.put('/upvote', withAuth, (req, res) => {
 router.put('/downvote', withAuth, (req, res) => {
     // custom static method created in models/Post.js
     // make sure the session exists first
-    if (req.session) {
       // pass session id along with all destructured properties on req.body
       Post.downvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
         .then(updatedVoteData => res.json(updatedVoteData))
@@ -121,7 +116,6 @@ router.put('/downvote', withAuth, (req, res) => {
           console.log(err);
           res.status(500).json(err);
         });
-    }
   });
 
 // Update a post title and content
