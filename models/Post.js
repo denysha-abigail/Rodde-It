@@ -26,7 +26,6 @@ class Post extends Model {
     }
     static downvote(body, models) {
         return models.Vote.destroy({
-            // user_id: body.user_id,
             where:
             {post_id: body.post_id}
         }).then(() => {
