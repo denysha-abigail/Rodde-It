@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rodde-It</title>
+  <link rel="stylesheet" href="/mock_views/mock_style.css">
+  <link rel="icon" type="image/x-icon" href="/public/images/rodde-it-logo.png">
+  <script src="https://kit.fontawesome.com/d61d6a6999.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="flex-column min-100-vh">
+    <header class="hero">
+        <nav class="nav">
+            <div class="logo-title">
+                <img class="logo" src="/public/images/rodde-it-logo.png" alt="rodde-it-logo">
+                <h1 class="app-title">Rodde-It</h1>
+            </div>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <!-- {{#if loggedIn}} -->
+                <!-- <li>
+                    <a href="/dashboard">Dashboard</a>
+                </li>
+                <button id="logout" class="btn-no-style">Logout</button> -->
+                <!-- {{else}} -->
+                <li>
+                    <a href="/login">Login</a>
+                </li>
+                <!-- {{/if}} -->
+            </ul>
+        </nav>
+        <!-- <h1 class="app-title">Rodde-It</h1> -->
+    </header>
+    <main>
+      <!-- {{{ body }}} -->
+      <a href="/post/1">
+        <article class="post card">
+            <div class="card-header">
+                <div class="title">
+                    3D Rocket Printer!?
+                </div>
+                <div class="meta">
+                    Posted by anaeli.m on 5/30/2022
+                </div>
+            </div>
+            <div class="card-body">  
+                <div class="content">
+                    Elon Musk recently announced that SpaceX completed its first 3D printed Spacecraft!
+                </div>
+                <div class="comment-count">  
+                    <i class="fa-solid fa-comment"></i>4 comments
+                </div>
+            </div>
+        </article>    </a>
+
+        <a href="/post/2">
+            <article class="post card">
+                <div class="card-header">
+                    <div class="title">
+                        AI is making headlines!
+                    </div>
+                    <div class="meta">
+                        Posted by thuy.n on 5/30/2022
+                    </div>
+                </div>
+                <div class="card-body">  
+                    <div class="content">
+                        Forbes recently published an article stating that extraordinary AI applications will soon be developed and built using drag-and-drop graphical interfaces!
+                    </div>
+                    <div class="comment-count">  
+                        <i class="fa-solid fa-comment"></i>2 comments
+                    </div>
+                </div>
+            </article>    </a>
+
+            <form class="comment-form card">
+                <div class="card-header">Add New Comment</div>
+                <div class="comment-form-body">
+                    <div>
+                        <textarea placeholder="Enter Comment Here" name="comment-body" class="form-textarea"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn">Add Comment</button>
+                        <button type="button" class="upvote-btn"><i class="fa-solid fa-thumbs-up"></i></button>
+                        <button type="button" class="downvote-btn"><i class="fa-solid fa-thumbs-down"></i></button>
+                    </div>
+                </div>
+            </form> 
+
+
+            <section class="comments card">
+                <div class="card-header">Comments</div>
+                    <div class="comment">
+                        <p><span></span>thuy.n · <span>5/30/2022</span></p>
+                        <p>Yes! I can&#x27;t wait! 🧠🏠</p>
+                    </div>
+                    <div class="comment">
+                        <p>thuy.n · <span>5/30/2022</span></p>
+                        <p>Yes! I can&#x27;t wait! 🧠🏠</p>
+                        
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="card">
+                <div class="card-header">Your Posts</div>
+                <div class="post-body">
+                    <ul class="post-list">
+                        <a href="/dashboard/edit/5">
+                            <li class="post-list-item" >
+                                <div>Smart Home Update!</div>
+                                <div>Posted on 5/30/2022</div>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="card " id="create-post-card">
+                <div class="card-header">Create New Post</div>
+                <div class="card-body">
+                    <form class="new-post-form">
+                        <div>
+                            <label for="post-title" class="form-label">Title</label>
+                            <input placeholder="Enter Title Here" class="form-input" id="post-title" type="text" name="post-title"/>
+                        </div>
+                        <div>
+                            <label for="post-content" class="form-label">Post Message</label>
+                            <textarea placeholder="Enter Message Here" class="form-textarea" id="post-content" name="post-content"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Submit Post</button>
+                    </form>
+                </div>
+            
+            </section>
+            <div class="center">
+                <button id="add-post-btn">Create New Post</button> 
+            </div>
+
+
+            <article>
+                <a href="/dashboard" class="dash-btn">&larr; Back to Dashboard</a>
+                <div class="card">
+                    <div class="card-header">
+                        Edit Post
+                    </div>
+                    <div class="card-body">
+                        <form class="edit-post-form">
+                            <div>
+                                <input class="form-input" type="text" name="post-title" value="Smart Home Update!" />
+                                <textarea class="form-textarea" name="post-content">According to NY Times, Apple, Samsung, Google, and Amazon are all planning to release and update their home technologies to work with a new standard that allows smart home devices to communicate with one another regardless of the virtual assistant or phone brand you may own!</textarea>
+                            </div>
+                            <div>
+                                <a href="/post/5" class="comment-count"><i class="fa-solid fa-comment"></i>2 comments</a>
+                            </div>
+                            <button class="btn" type="submit">Update Post</button>
+                            <button class="btn delete-post-btn" type="button">Delete Post</button>
+                        </form>
+                    </div>
+                </div>
+            </article>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="title">
+                        Login
+                    </div>
+                </div>
+                <div class="card-body">  
+                    <form class="login-form">
+                        <div>
+                            <label for="email-login" class="form-label">Email:</label>
+                            <input type="text" class="form-input" id="email-login" />
+                        </div>
+                        <div>
+                            <label for="password-login" class="form-label">Password:</label>
+                            <input type="password" class="form-input" id="password-login" />
+                        </div>
+                        <div>
+                            <button type="submit" class="btn">Login</button>
+                        </div>
+                        <a href="/signup" class="btn">Sign Up!</a>
+                    </form>
+                </div>
+            </div>
+            
+<div class="card">
+    <div class="card-header">
+        <div class="title">
+            Sign Up
+        </div>
+    </div>
+    <div class="card-body">  
+        <form class="signup-form">
+            <div>
+                <label for="username-signup" class="form-label">Username:</label>
+                <input type="text" class="form-input" id="username-signup" />
+            </div>
+            <div>
+                <label for="email-signup" class="form-label">Email:</label>
+                <input type="text" class="form-input" id="email-signup" />
+            </div>
+            <div>
+                <label for="password-signup" class="form-label">Password:</label>
+                <input type="password" class="form-input" id="password-signup" />
+            </div>
+            <div>
+                <button type="submit" class="btn">Sign Up</button>
+            </div>
+            <a href="/login"><span>Returning User? </span>Log In</a>
+        </form>
+    </div>
+</div>
+    </main>
+  </div>
+  <!-- {{#if loggedIn}} -->
+ <script src="/javascript/logout.js"></script>
+ <!-- {{/if}} -->
+</body>
+
+</html>

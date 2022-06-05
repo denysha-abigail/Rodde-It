@@ -6,11 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rodde-It</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="icon" type="image/x-icon" href="/images/rodde-it-logo.png">
+  <script src="https://kit.fontawesome.com/d61d6a6999.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="flex-column min-100-vh">
-    <header class="hero">
+<body>
+    <header>
         <nav class="nav">
+            <div class="logo-title">
+                <img class="logo" src="/images/rodde-it-logo.png" alt="rodde-it-logo">
+                <h1 class="app-title">Rodde-It</h1>
+            </div>
             <ul>
                 <li>
                     <a href="/">Home</a>
@@ -27,7 +33,6 @@
                 {{/if}}
             </ul>
         </nav>
-        <h1 class="app-title">Rodde-It</h1>
     </header>
     <main>
       {{{ body }}}

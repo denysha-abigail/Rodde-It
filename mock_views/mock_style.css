@@ -165,7 +165,7 @@ a:hover, .comment-count:hover {
 }
 
 .comment-count {
-    color: var(--drk-ong);
+    color: var(--drk-grey);
     font-weight: bold;
 }
 
@@ -204,6 +204,10 @@ a:hover, .comment-count:hover {
 	border-radius: 10px;
 }
 
+.form-textarea {
+	margin: 5px;
+}
+
 input:focus, 
 textarea:focus {
     outline: 1px solid var(--drk-ong);
@@ -220,10 +224,6 @@ textarea:focus {
 
 span {
     color: white;
-}
-
-.drk {
-    color: var(--drk-ong);
 }
 
 .post-list {
@@ -274,7 +274,7 @@ span {
     font-weight: bold;
     border: 1px solid var(--drk-ong);
     padding: 10px;
-    margin: 20px 0 0 0;
+    margin: 20px;
     border-radius: 30px;
 }
 

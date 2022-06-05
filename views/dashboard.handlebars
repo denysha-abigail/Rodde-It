@@ -7,7 +7,7 @@
             <a href="/dashboard/edit/{{id}}">
                 <li class="post-list-item" >
                     <div>{{title}}</div>
-                    <div>{{format_date created_at}}</div>
+                    <div>Posted on {{format_date created_at}}</div>
                 </li>
             </a>
             {{/each}}
@@ -22,11 +22,11 @@
         <form class="new-post-form">
             <div>
                 <label for="post-title" class="form-label">Title</label>
-                <input class="form-input" id="post-title" type="text" name="post-title"/>
+                <input placeholder="Enter Title Here"  class="form-input" id="post-title" type="text" name="post-title"/>
             </div>
             <div>
                 <label for="post-content" class="form-label">Post Message</label>
-                <textarea class="form-textarea" id="post-content" name="post-content"></textarea>
+                <textarea placeholder="Enter Message Here" class="form-textarea" id="post-content" name="post-content"></textarea>
             </div>
             <button type="submit" class="btn">Submit Post</button>
         </form>

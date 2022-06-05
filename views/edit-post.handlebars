@@ -1,5 +1,5 @@
 <article>
-    <a href="/dashboard">&larr; Back to Dashboard</a>
+    <div class="center"><a href="/dashboard" class="dash-btn">&larr; Back to Dashboard</a></div>
     <div class="card">
         <div class="card-header">
             Edit Post
@@ -10,13 +10,11 @@
                     <input class="form-input" type="text" name="post-title" value="{{post.title}}" />
                     <textarea class="form-textarea" name="post-content">{{post.post_content}}</textarea>
                 </div>
-                <div>
-                    <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
-                </div>
                  <div>
-                {{post.vote_count}} {{format_plural "point" post.vote_count}} by you on {{format_date post.created_at}}
+                {{post.vote_count}} {{format_plural "point" post.vote_count}} 
+                {{!-- by you on {{format_date post.created_at}} --}}
                 |
-                <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+                <a href="/post/{{post.id}}" class="comment-count"><i class="fa-solid fa-comment"></i>{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
                 </div>
                 <button class="btn" type="submit">Update Post</button>
                 <button class="btn delete-post-btn" type="button">Delete Post</button>
