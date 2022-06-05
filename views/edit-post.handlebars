@@ -23,7 +23,19 @@
     </div>
 </article>
 
-{{> comment-form}}
+<form class="comment-form card">
+    <div class="card-header">Add New Comment</div>
+    <div class="comment-form-body">
+        <div>
+            <textarea placeholder="Enter Comment Here" name="comment-body" class="form-textarea"></textarea>
+        </div>
+        <div>
+            <button type="submit" class="btn">Add Comment</button>
+        </div>
+    </div>
+</form> 
+
+{{!-- {{> comment-form}} --}}
 
 {{> comments post.comments }}
 
