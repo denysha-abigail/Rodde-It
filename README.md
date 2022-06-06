@@ -12,7 +12,7 @@ This full stack web application utilizes HTML, CSS, Handlebars, JavaScript, MySQ
 - Upvoting or Downvoting on posts
 - Navigating to Sign up, Log in, Home, Dashboard, and Edit pages
 
-- Visit the deployed Heroku site [HERE](https://rodde-it.herokuapp.com/)
+> Visit the deployed Heroku site [HERE](https://rodde-it.herokuapp.com/)
 
 ## Table of Contents
   - [Installation](#installation)
