@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rodde-It</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-  <link rel="icon" type="image/x-icon" href="/images/rodde-it-logo.png">
-  <script src="https://kit.fontawesome.com/d61d6a6999.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodde-It</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="icon" type="image/x-icon" href="/images/rodde-it-logo.png">
+    <script src="https://kit.fontawesome.com/d61d6a6999.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -31,16 +31,24 @@
                     <a href="/login">Login</a>
                 </li>
                 {{/if}}
+                <label class="language">
+                    Language:
+                    <select>
+                        <option value="en">EN</option>
+                        <option value="de">DE</option>
+                        <option value="es">ES</option>
+                    </select>
+                </label>
             </ul>
         </nav>
     </header>
     <main>
-      {{{ body }}}
+        {{{ body }}}
     </main>
-  </div>
-  {{#if loggedIn}}
- <script src="/javascript/logout.js"></script>
- {{/if}}
+    </div>
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
 </body>
 
 </html>

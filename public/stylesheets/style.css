@@ -283,3 +283,7 @@ span {
     color: white;
     cursor: pointer;
 }
+
+.language {
+    padding: 10px;
+}
