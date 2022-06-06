@@ -257,7 +257,7 @@ span {
     font-weight: bold;
     border: 1px solid var(--drk-ong);
     padding: 10px;
-    margin: 0 0 20px 0;
+    margin: 20px 0 20px 0;
     border-radius: 30px;
 }
 
