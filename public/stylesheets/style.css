@@ -2,6 +2,7 @@
 
 :root {
 	--grey: #cdc3c1;
+    --med-grey: #a39493;
     --drk-grey: #423c3a;
 	--drk-ong: #f58111;
 }
@@ -14,7 +15,7 @@
 }
 
 html {
-    background-color: var(--grey);
+    background-color: var(--med-grey);
 }
 
 .nav {
@@ -104,7 +105,6 @@ a:hover, .comment-count:hover {
 .btn-no-style,
 .btn-no-style:active {
     background: none;
-    border: none;
     cursor: pointer;
     text-decoration: none;
     color: var(--drk-ong);
@@ -134,12 +134,15 @@ a:hover, .comment-count:hover {
 	margin: 20px;
 	border: 1px solid var(--drk-grey);
 	border-radius: 10px;
+    background-color: var(--grey);
+    box-shadow: 0 0 5px var(--drk-grey);
 }
 
 .card-header {
 	color: var(--drk-ong);
     font-weight: bold;
     background-color: white;
+    border-bottom: 1px solid var(--drk-ong);
     border-radius: 10px 10px 0 0;
 	padding: 10px 15px;
 	display: flex;
@@ -240,6 +243,7 @@ span {
     list-style: none;
     font-size: 15px;
     border-radius: 10px;
+    border: 1px solid var(--drk-ong);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -259,6 +263,7 @@ span {
     padding: 10px;
     margin: 20px 0 20px 0;
     border-radius: 30px;
+    box-shadow: 0 0 5px var(--drk-grey);
 }
 
 #add-post-btn:hover {

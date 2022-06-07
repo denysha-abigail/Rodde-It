@@ -8,11 +8,15 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="icon" type="image/x-icon" href="/images/rodde-it-logo.png">
     <script src="https://kit.fontawesome.com/d61d6a6999.js" crossorigin="anonymous"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 </head>
 
 <body>
     <header>
-        <nav class="nav">
+        <nav class="nav animate__animated animate__fadeInDownBig animate__slow">
             <div class="logo-title">
                 <img class="logo" src="/images/rodde-it-logo.png" alt="rodde-it-logo">
                 <h1 class="app-title">Rodde-It</h1>
@@ -31,14 +35,6 @@
                     <a href="/login">Login</a>
                 </li>
                 {{/if}}
-                <label class="language">
-                    Language:
-                    <select>
-                        <option value="en">EN</option>
-                        <option value="de">DE</option>
-                        <option value="es">ES</option>
-                    </select>
-                </label>
             </ul>
         </nav>
     </header>
@@ -49,7 +45,6 @@
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
-    <script type="module" src="/javascript/language.js"></script>
 </body>
 
 </html>
