@@ -43,8 +43,7 @@ This full stack web application utilizes HTML, CSS, Handlebars, JavaScript, MySQ
 - Once the server has been turned on, head over to Insomnia to test API GET, POST, PUT, and DELETE routes in order to create, read, update, and delete data from the SQL database.  
 
 ## Preview
-
-
+![screenshot of index.html](./public/images/Screen-Shot.png)
 
 
 ## License
