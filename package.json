@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@andreasremdt/simple-translator": "^2.0.4",
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^6.1.1",
     "dotenv": "^8.6.0",
