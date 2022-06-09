@@ -30,7 +30,7 @@ This full stack web application utilizes HTML, CSS, Handlebars, JavaScript, MySQ
 - To install this application, clone this repository onto your local computer, open it in your code editor, and run the following command on your terminal: ```npm install```
 
 - Once all dependencies have been installed, create an environment variable file (.env) at the root level of this application with the following content for successful connection to the database:
-    - DB_NAME = ecommerce_db
+    - DB_NAME = platform_db
     - DB_USER = <'mysql-username-here'> (If no username is set, default user for SQL is 'root')
     - DB_PW = <'mysql-password-here'> (If no password is set, by default SQL has no password)
 
